@@ -7,9 +7,14 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.format.DateFormat;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,10 +27,12 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class Detalle_registro extends AppCompatActivity {
-    TextView D_Titulo, D_Cuenta, D_NombreUsuario, D_Password, D_SitioWeb, D_Nota, D_Tiempo_registro, D_Tiempo_actualizacion;
+    TextView D_Titulo, D_Cuenta, D_NombreUsuario, D_SitioWeb, D_Nota, D_Tiempo_registro, D_Tiempo_actualizacion;
+    EditText D_Password;
     ImageView D_Imagen;
     String id_registro;
     BDHelper helper;
+    ImageButton  Im_Ir_Web;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +57,20 @@ public class Detalle_registro extends AppCompatActivity {
         /*Esto hara posible que se cree la flecha dentro del action bar*/
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
+        Im_Ir_Web.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url_pagina_web = D_SitioWeb.getText().toString().trim();
+
+                if(!url_pagina_web.equals("")){
+                    abrirPaginaWeb(url_pagina_web);
+                }else{
+                    Toast.makeText(Detalle_registro.this, " No existe una URL ", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
+
     private void InicializarVariables(){
         D_Titulo = findViewById(R.id.D_Titulo);
         D_Cuenta = findViewById(R.id.D_Cuenta);
@@ -61,6 +81,8 @@ public class Detalle_registro extends AppCompatActivity {
         D_Tiempo_registro = findViewById(R.id.D_Tiempo_registro);
         D_Tiempo_actualizacion = findViewById(R.id.D_Tiempo_actualizacion);
         D_Imagen = findViewById(R.id.D_Imagen);
+
+        Im_Ir_Web = findViewById(R.id.Im_Ir_Web);
 
     }
     private void MostrarInformacionRegistro() {
@@ -102,6 +124,9 @@ public class Detalle_registro extends AppCompatActivity {
                 D_Cuenta.setText(cuenta);
                 D_NombreUsuario.setText(nombre_usuario);
                 D_Password.setText(password);
+                D_Password.setEnabled(false);
+                D_Password.setBackgroundColor(Color.TRANSPARENT);
+                D_Password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
                 D_SitioWeb.setText(sitio_web);
                 D_Nota.setText(nota);
                 D_Tiempo_registro.setText(tiempo_registro);
@@ -117,6 +142,11 @@ public class Detalle_registro extends AppCompatActivity {
             } while (cursor.moveToNext());
         }
         db.close();
+    }
+
+    private void abrirPaginaWeb(String urlPaginaWeb) {
+        Intent navegar = new Intent(Intent.ACTION_VIEW, Uri.parse("https://"+urlPaginaWeb));
+        startActivity(navegar);
     }
 
     @Override

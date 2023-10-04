@@ -107,27 +107,51 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="10dp">
-            <!--Texto-->
-            <TextView
-                android:text="@string/Txt_D_Password"
+
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans_bold"
-                android:textSize="20sp"/>
-            <!--Dato de la BD-->
-            <TextView
-                android:id="@+id/D_Password"
-                android:text="@string/D_Password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans_regular"
-                android:textSize="18sp"/>
-            <!--Nos mostrara una linea  para tener una mejor visualizacion-->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="5dp"
-                android:background="#000"/>
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <!--Texto-->
+                <TextView
+                    android:text="@string/Txt_D_Password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:textSize="20sp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:passwordToggleEnabled="true"
+                    >
+
+                    <!--Dato de la BD-->
+                    <EditText
+                        android:id="@+id/D_Password"
+                        android:text="@string/D_Password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:fontFamily="@font/opensans_bold"
+                        android:textSize="18sp"
+                        android:textColor="#000"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Nos mostrara una linea  para tener una mejor visualizacion-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#000"/>
+
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -144,14 +168,33 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/opensans_bold"
                 android:textSize="20sp"/>
-            <!--Dato de la BD-->
-            <TextView
-                android:id="@+id/D_SitioWeb"
-                android:text="@string/D_SitioWeb"
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans_regular"
-                android:textSize="18sp"/>
+                android:layout_height="wrap_content">
+
+                <!--Dato de la BD-->
+                <TextView
+                    android:id="@+id/D_SitioWeb"
+                    android:text="@string/D_SitioWeb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_regular"
+                    android:textSize="18sp"
+                    android:layout_toStartOf="@+id/Im_Ir_Web"/>
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/Im_Ir_Web"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="5dp"
+                    android:background="@null"
+                    android:src="@drawable/icono_visitar_web"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"/>
+
+            </RelativeLayout>
             <!--Nos mostrara una linea  para tener una mejor visualizacion-->
             <View
                 android:layout_width="match_parent"
