@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">PassApp</string>
+
+    <!--Drawer Menu-->
+    <string name="Opcion_Todas">Contraseñas</string>
+    <string name="Opcion_Ajustes">Ajustes</string>
+    <string name="Opcion_Salir">Salir</string>
+
+    <!--Drawer Layout-->
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+
+    <!--FAB-->
+    <string name="FAB_AgregarPassword">Agregar</string>
+
+    <!--DISEÑO AGREGAR PASSWORD-->
+    <string name="EtTitulo">Titulo</string>
+    <string name="EtCuenta">Cuenta</string>
+    <string name="EtNombreUsuario">Nombre de Usuario</string>
+    <string name="EtPassword">Contraseña</string>
+    <string name="EtSitioWeb">Sitio Web</string>
+    <string name="EtNota">Nota</string>
+    <string name="Btn_Adjuntar_Imagen">Adjuntar Imagen</string>
+
+    <!--MENU AGREGAR PASSWORD-->
+    <string name="Guardar_Password">Guardar</string>
+
+
+    <!--Item password-->
+    <string name="Item_titulo">Titulo</string>
+    <string name="Item_cuenta">Cuenta</string>
+    <string name="Item_nombre_usuario">Nombre de usuario</string>
+    <string name="Item_password">Password</string>
+    <string name="Item_sitio_web">Sitio Web</string>
+    <string name="Item_nota">Nota</string>
+
+    <!--Menu fragmento todas-->
+    <string name="menu_Numero_registros">Número de registros</string>
+    <string name="menu_Buscar_registros">Buscar Registros</string>
+    <string name="menu_Ordenar_registros">Ordenar Registros</string>
+
+    <!--Cuadro de dialogo - numero de registros-->
+    <string name="TxtTotal">Total de registros</string>
+    <string name="Total"> -- </string>
+    <string name="btnEntendidoTotal">Entendido</string>
+
+    <!--Detalle Registro-->
+    <string name="Txt_D_Titulo">Titulo: </string>
+    <string name="D_Titulo"> -- </string>
+    <string name="Txt_D_Cuenta">Cuenta: </string>
+    <string name="D_Cuenta"> -- </string>
+    <string name="Txt_D_NombreUsuario">Nombre de Usuario: </string>
+    <string name="D_NombreUsuario"> -- </string>
+    <string name="Txt_D_Password">Contraseña: </string>
+    <string name="D_Password"> -- </string>
+    <string name="Txt_D_SitioWeb">Sitio Web: </string>
+    <string name="D_SitioWeb"> -- </string>
+    <string name="Txt_D_Nota">Nota: </string>
+    <string name="D_Nota"> -- </string>
+    <string name="Txt_D_Tiempo_registro">Tiempo de Registro: </string>
+    <string name="D_Tiempo_registro"> -- </string>
+    <string name="Txt_D_Tiempo_actualizacion">Tiempo de Actualizacion: </string>
+    <string name="D_Tiempo_actualizacion"> -- </string>
+
+    <!--Cuadro de dialogo editar - eliminar registro-->
+    <string name="btn_Editar_Registro">Editar</string>
+    <string name="btn_Eliminar_Registro">Eliminar</string>
+
+    <!--Cuadro de dialogo - Ordenar registros-->
+    <string name="Btn_Nuevos">Nuevos</string>
+    <string name="Btn_Pasados">Antiguos</string>
+    <string name="Btn_Asc">A-Z</string>
+    <string name="Btn_Des">Z-A</string>
+
+    <!-- Ajustes -->
+    <string name="Txt_Ajustes">Ajustes</string>
+    <string name="Eleminar_Todos_Registros">Eleminar todos los registros</string>
+    <!-- Cuadro de dialogo mensaje -->
+    <string name="Pregunta_Txt">¿Estás seguro de  eliminar todos los registros?</string>
+    <string name="Btn_Si">Si, estoy de acuerdo</string>
+    <string name="Btn_Cancelar">Cancelar</string>
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

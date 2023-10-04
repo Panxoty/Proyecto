@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Detalle.Detalle_registro">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+        <!--Titulo-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <!--Texto-->
+            <TextView
+                android:text="@string/Txt_D_Titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:textSize="20sp"/>
+            <!--Dato de la BD-->
+            <TextView
+                android:id="@+id/D_Titulo"
+                android:text="@string/D_Titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="18sp"/>
+            <!--Nos mostrara una linea  para tener una mejor visualizacion-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#000"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--Cuenta-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <!--Texto-->
+            <TextView
+                android:text="@string/Txt_D_Cuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:textSize="20sp"/>
+            <!--Dato de la BD-->
+            <TextView
+                android:id="@+id/D_Cuenta"
+                android:text="@string/D_Cuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="18sp"/>
+            <!--Nos mostrara una linea  para tener una mejor visualizacion-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#000"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--Nombre usuario-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <!--Texto-->
+            <TextView
+                android:text="@string/Txt_D_NombreUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:textSize="20sp"/>
+            <!--Dato de la BD-->
+            <TextView
+                android:id="@+id/D_NombreUsuario"
+                android:text="@string/D_NombreUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="18sp"/>
+            <!--Nos mostrara una linea  para tener una mejor visualizacion-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#000"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--Contraseña-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <!--Texto-->
+            <TextView
+                android:text="@string/Txt_D_Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:textSize="20sp"/>
+            <!--Dato de la BD-->
+            <TextView
+                android:id="@+id/D_Password"
+                android:text="@string/D_Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="18sp"/>
+            <!--Nos mostrara una linea  para tener una mejor visualizacion-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#000"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--Sitio Web-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <!--Texto-->
+            <TextView
+                android:text="@string/Txt_D_SitioWeb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:textSize="20sp"/>
+            <!--Dato de la BD-->
+            <TextView
+                android:id="@+id/D_SitioWeb"
+                android:text="@string/D_SitioWeb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="18sp"/>
+            <!--Nos mostrara una linea  para tener una mejor visualizacion-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#000"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--Nota-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <!--Texto-->
+            <TextView
+                android:text="@string/Txt_D_Nota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:textSize="20sp"/>
+            <!--Dato de la BD-->
+            <TextView
+                android:id="@+id/D_Nota"
+                android:text="@string/D_Nota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="18sp"/>
+            <!--Nos mostrara una linea  para tener una mejor visualizacion-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#000"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--Tiempo registro-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <!--Texto-->
+            <TextView
+                android:text="@string/Txt_D_Tiempo_registro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:textSize="20sp"/>
+            <!--Dato de la BD-->
+            <TextView
+                android:id="@+id/D_Tiempo_registro"
+                android:text="@string/D_Tiempo_registro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="18sp"/>
+            <!--Nos mostrara una linea  para tener una mejor visualizacion-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#000"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--Tiempo actualizacion-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <!--Texto-->
+            <TextView
+                android:text="@string/Txt_D_Tiempo_actualizacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:textSize="20sp"/>
+            <!--Dato de la BD-->
+            <TextView
+                android:id="@+id/D_Tiempo_actualizacion"
+                android:text="@string/D_Tiempo_actualizacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="18sp"/>
+            <!--Nos mostrara una linea  para tener una mejor visualizacion-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#000"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <ImageView
+            android:id="@+id/D_Imagen"
+            android:src="@drawable/imagen"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="200dp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</ScrollView>
