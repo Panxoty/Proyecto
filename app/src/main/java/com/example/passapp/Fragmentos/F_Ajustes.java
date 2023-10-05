@@ -25,7 +25,7 @@ import com.example.passapp.R;
 public class F_Ajustes extends Fragment {
 
 
-    TextView Eliminar_Todos_Registros;
+    TextView Eliminar_Todos_Registros, Exportar_Archivo, Importar_Archivo;
     Dialog dialog;
     BDHelper bdHelper;
 
@@ -36,12 +36,27 @@ public class F_Ajustes extends Fragment {
         View view = inflater.inflate(R.layout.fragment_f__ajustes, container, false);
 
         Eliminar_Todos_Registros = view.findViewById(R.id.Eleminar_Todos_Registros);
+        Exportar_Archivo = view.findViewById(R.id.Exportar_Archivo);
+        Importar_Archivo = view.findViewById(R.id.Importar_Archivo);
         dialog = new Dialog(getActivity());
         bdHelper = new BDHelper(getActivity());
         Eliminar_Todos_Registros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Dialog_Eliminar_Registros();
+            }
+        });
+        Exportar_Archivo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(),"Exportar archivo",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Importar_Archivo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(),"Importar archivo",Toast.LENGTH_SHORT).show();
             }
         });
         return view;

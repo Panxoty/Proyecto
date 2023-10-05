@@ -75,6 +75,8 @@
     <!-- Ajustes -->
     <string name="Txt_Ajustes">Ajustes</string>
     <string name="Eleminar_Todos_Registros">Eleminar todos los registros</string>
+    <string name="Exportar_Archivo">Exportar archivo CSV</string>
+    <string name="Importar_Archivo">Importar archivo CSV</string>
     <!-- Cuadro de dialogo mensaje -->
     <string name="Pregunta_Txt">¿Estás seguro de  eliminar todos los registros?</string>
     <string name="Btn_Si">Si, estoy de acuerdo</string>
