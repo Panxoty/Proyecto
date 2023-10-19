@@ -1,11 +1,18 @@
 package com.example.passapp.Fragmentos;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.Environment;
@@ -59,11 +66,17 @@ public class F_Ajustes extends Fragment {
                 Dialog_Eliminar_Registros();
             }
         });
+
+        /*-------------------- Exportar e importar archivo --------------------*/
         Exportar_Archivo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Toast.makeText(getActivity(),"Exportar archivo",Toast.LENGTH_SHORT).show();
-                ExportarRegistro();
+                if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
+                    ExportarRegistro();
+                }else{
+                    SolicitudPermisoExportar.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                }
             }
         });
 
@@ -76,8 +89,13 @@ public class F_Ajustes extends Fragment {
                 builder.setPositiveButton("Continuar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        bdHelper.EliminarTodosRegistros();
-                        ImportarRegistro();
+                        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
+                            bdHelper.EliminarTodosRegistros();
+                            ImportarRegistro();
+                        }else{
+                            SolicitudPermisoImportar.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                        }
+
                     }
                 });
                 builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -214,5 +232,24 @@ public class F_Ajustes extends Fragment {
         }
 
     }
+
+    //Permiso para exportar un registro
+    private ActivityResultLauncher<String> SolicitudPermisoExportar =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), Concede_permiso_exportar -> {
+                if(Concede_permiso_exportar){
+                    ExportarRegistro();
+                }else{
+                    Toast.makeText(getActivity(),"Permiso denegado",Toast.LENGTH_SHORT).show();
+                }
+            });
+    //Permiso para importar un registro
+    private ActivityResultLauncher<String> SolicitudPermisoImportar =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), Concede_permiso_importar -> {
+                if(Concede_permiso_importar){
+                    ImportarRegistro();
+                }else{
+                    Toast.makeText(getActivity(),"Permiso denegado",Toast.LENGTH_SHORT).show();
+                }
+            });
 
 }
