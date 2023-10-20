@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.passapp.Login.Login;
+import com.example.passapp.Login.Login_u;
 import com.example.passapp.MainActivity;
 import com.example.passapp.R;
 
@@ -80,7 +80,7 @@ public class Registro extends AppCompatActivity {
 
         //Si el usuario ya tiene una contrasena maestra registrada que lo mande a otro activity e introduzca su contrasena
         if(mipassword !=null){
-            Intent intent = new Intent(Registro.this, Login.class);
+            Intent intent = new Intent(Registro.this, Login_u.class);
             startActivity(intent);
             finish();
         }

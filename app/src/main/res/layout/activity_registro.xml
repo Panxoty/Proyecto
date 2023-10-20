@@ -56,7 +56,7 @@
 
 
     </com.google.android.material.textfield.TextInputLayout>
-
+    <!--Registrar password maestra-->
     <Button
         android:id="@+id/btnRegistrar"
         android:fontFamily="@font/opensans_regular"

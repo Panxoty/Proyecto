@@ -20,31 +20,32 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
-            android:name=".Login.Login"
+            android:name=".Login.Login_u"
             android:exported="false" />
+        <!--a-->
         <activity
             android:name=".Registro_usuario.Registro"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+
         <activity
             android:name=".Detalle.Detalle_registro"
             android:exported="false" />
         <activity
             android:name=".OpcionesPassword.Agregar_Actualizar_Registro"
             android:exported="false" />
+
+        <!--a-->
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
