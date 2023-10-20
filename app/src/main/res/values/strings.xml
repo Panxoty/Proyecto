@@ -82,6 +82,12 @@
     <string name="Btn_Si">Si, estoy de acuerdo</string>
     <string name="Btn_Cancelar">Cancelar</string>
 
+    <!-- Registros -->
+    <string name="TXTBienvenidos">¡Bienvenid@s!</string>
+    <string name="TXTMensaje">Por favor introduzca una contraseña maestra</string>
+    <string name="EtPasswordU">Contraseña</string>
+    <string name="EtCPassword">Confirmar contraseña</string>
+    <string name="btnRegistrar">Registrar</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
