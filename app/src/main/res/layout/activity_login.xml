@@ -31,7 +31,7 @@
 
 
     </com.google.android.material.textfield.TextInputLayout>
-
+    <!--Boton Ingresar-->
     <Button
         android:id="@+id/btnIngresar"
         android:fontFamily="@font/opensans_regular"
@@ -40,5 +40,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#104487"/>
+
+    <TextView
+        android:text="@string/txt_Otro_Metodo"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/opensans_regular"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Boton inicio sesion biometrico -->
+    <Button
+        android:id="@+id/btnInicioSesionBiometrico"
+        android:fontFamily="@font/opensans_regular"
+        android:text="@string/btnInicioSesionBiometrico"
+        android:textColor="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#104487"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        app:lottie_imageAssetsFolder="assets"
+        app:lottie_fileName="huella_dactilar.json"
+        app:lottie_autoPlay="true"
+        android:layout_marginTop="50dp"
+        app:lottie_loop="true"
+        />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

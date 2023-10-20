@@ -1,6 +1,8 @@
 package com.example.passapp.Login;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.biometric.BiometricPrompt;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,10 +17,12 @@ import com.example.passapp.R;
 
 public class Login_u extends AppCompatActivity {
     EditText EtPasswordU;
-    Button btnIngresar;
+    Button btnIngresar, btnInicioSesionBiometrico;
     SharedPreferences sharedPreferences;
     private static final String SHARED_PREF = "mi_pref";
     private static final String KEY_PASSWORD = "password";
+    private BiometricPrompt biometricPrompt;
+    private BiometricPrompt.PromptInfo promptInfo;
 
 
     @Override
@@ -46,10 +50,46 @@ public class Login_u extends AppCompatActivity {
 
             }
         });
+        
+        biometricPrompt = new BiometricPrompt(Login_u.this, new BiometricPrompt.AuthenticationCallback() {
+            @Override
+            public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
+                super.onAuthenticationError(errorCode, errString);
+                Toast.makeText(Login_u.this, "No existen huellas dactilares registradas", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
+                super.onAuthenticationSucceeded(result);
+                Toast.makeText(Login_u.this, "Autenticacicón biométrica exitosa, ¡Bienvenido(a)!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Login_u.this, MainActivity.class));
+                finish();
+            }
+
+            @Override
+            public void onAuthenticationFailed() {
+                super.onAuthenticationFailed();
+                Toast.makeText(Login_u.this, "Falló la autenticación", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        /*Configurar comportamiento del aviso biometrico*/
+        promptInfo = new BiometricPrompt.PromptInfo.Builder()
+                .setTitle("Autenticacicón biométrica")
+                .setNegativeButtonText("Cancelar")
+                .build();
+
+        btnInicioSesionBiometrico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                biometricPrompt.authenticate(promptInfo);
+            }
+        });
     }
     private void InicializarVariables(){
         EtPasswordU = findViewById(R.id.EtPasswordU);
         btnIngresar = findViewById(R.id.btnIngresar);
+        btnInicioSesionBiometrico = findViewById(R.id.btnInicioSesionBiometrico);
         sharedPreferences = getSharedPreferences(SHARED_PREF,MODE_PRIVATE);
     }
 

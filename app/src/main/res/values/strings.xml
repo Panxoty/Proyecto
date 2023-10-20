@@ -90,6 +90,9 @@
     <string name="btnRegistrar">Registrar</string>
     <!-- Login -->
     <string name="btnIngresar">Ingresar</string>
+    <!-- Inicio sesion Biometrico -->
+    <string name="txt_Otro_Metodo">Otro Método</string>
+    <string name="btnInicioSesionBiometrico">Autenticación biométrica</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

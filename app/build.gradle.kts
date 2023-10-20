@@ -45,4 +45,5 @@ dependencies {
     implementation ("com.google.android.material:material:1.9.0")
     implementation ("com.airbnb.android:lottie:4.2.1")
     implementation ("com.opencsv:opencsv:4.6")
+    implementation ("androidx.biometric:biometric:1.1.0")
 }
