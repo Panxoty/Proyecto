@@ -16,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,7 +50,7 @@ public class F_Todas extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
+        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         View view = inflater.inflate(R.layout.fragment_f__todas, container, false);
         recyclerView_Registros = view.findViewById(R.id.recyclerView_Registros); /*Implementamos el recicler view en el fragmento*/
         FAB_AgregarPassword = view.findViewById(R.id.FAB_AgregarPassword);

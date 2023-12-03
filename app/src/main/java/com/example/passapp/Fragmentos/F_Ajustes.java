@@ -22,6 +22,7 @@ import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -66,6 +67,7 @@ public class F_Ajustes extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         View view = inflater.inflate(R.layout.fragment_f__ajustes, container, false);
 
         Eliminar_Todos_Registros = view.findViewById(R.id.Eleminar_Todos_Registros);
