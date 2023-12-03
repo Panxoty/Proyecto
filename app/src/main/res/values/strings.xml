@@ -77,10 +77,21 @@
     <string name="Eleminar_Todos_Registros">Eliminar todos los registros</string>
     <string name="Exportar_Archivo">Exportar archivo CSV</string>
     <string name="Importar_Archivo">Importar archivo CSV</string>
+    <string name="Cambiar_password_maestra">Cambiar contraseña</string>
+
     <!-- Cuadro de dialogo mensaje -->
     <string name="Pregunta_Txt">¿Estás seguro de  eliminar todos los registros?</string>
     <string name="Btn_Si">Si, estoy de acuerdo</string>
     <string name="Btn_Cancelar">Cancelar</string>
+
+    <!-- Cuadro de dialogo pass maestra -->
+    <string name="Txt_pass_maestra">Su contraseña maestra es:</string>
+    <string name="Password_maestra"> -- </string>
+    <string name="Et_nueva_pass_maestra">Nueva contraseña maestra</string>
+    <string name="Et_C_nueva_pass_maestra">Confirme su contraseña maestra</string>
+    <string name="Btn_cambiar_pass_maestra">Cambiar</string>
+    <string name="Btn_cancelar_pass_maestra">Cancelar</string>
+
 
     <!-- Registros -->
     <string name="TXTBienvenidos">¡Bienvenid@s!</string>

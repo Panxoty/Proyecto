@@ -6,7 +6,9 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -16,19 +18,24 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.Environment;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.passapp.BaseDeDatos.BDHelper;
 import com.example.passapp.BaseDeDatos.Constants;
+import com.example.passapp.Login.Login_u;
 import com.example.passapp.MainActivity;
 import com.example.passapp.Modelo.Password;
 import com.example.passapp.R;
 import com.opencsv.CSVReader;
+
+import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.FileReader;
@@ -43,11 +50,17 @@ import java.util.ArrayList;
 public class F_Ajustes extends Fragment {
 
 
-    TextView Eliminar_Todos_Registros, Exportar_Archivo, Importar_Archivo;
-    Dialog dialog;
+    TextView Eliminar_Todos_Registros, Exportar_Archivo, Importar_Archivo, Cambiar_password_maestra;
+    Dialog dialog, dialog_p_m;
     BDHelper bdHelper;
 
     String ordenarTituloAsc = Constants.C_TITULO + " ASC";
+
+    SharedPreferences sharedPreferences;
+
+    private static final String SHARED_PREF = "mi_pref";
+    private static final String KEY_PASSWORD = "password";
+    private static final String KEY_C_PASSWORD = "c_password";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,8 +71,12 @@ public class F_Ajustes extends Fragment {
         Eliminar_Todos_Registros = view.findViewById(R.id.Eleminar_Todos_Registros);
         Exportar_Archivo = view.findViewById(R.id.Exportar_Archivo);
         Importar_Archivo = view.findViewById(R.id.Importar_Archivo);
+        Cambiar_password_maestra =  view.findViewById(R.id.Cambiar_password_maestra);
         dialog = new Dialog(getActivity());
+        dialog_p_m = new Dialog(getActivity());
         bdHelper = new BDHelper(getActivity());
+
+        sharedPreferences = getActivity().getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE);
         Eliminar_Todos_Registros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,8 +124,18 @@ public class F_Ajustes extends Fragment {
                 builder.create().show();
             }
         });
+
+        Cambiar_password_maestra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(getActivity(), "Cambiar contraseña maestra", Toast.LENGTH_SHORT).show();
+                CuadroDialogoPassMaestra();
+            }
+        });
         return view;
     }
+
+
     private void Dialog_Eliminar_Registros() {
         Button Btn_Si, Btn_Cancelar;
 
@@ -232,6 +259,72 @@ public class F_Ajustes extends Fragment {
         }
 
     }
+    private void CuadroDialogoPassMaestra() {
+        //Establecemos las vistas
+        EditText Password_maestra;
+        EditText Et_nueva_pass_maestra, Et_C_nueva_pass_maestra;
+        Button Btn_cambiar_pass_maestra, Btn_cancelar_pass_maestra;
+
+        String password_maestra_recuperada = sharedPreferences.getString(KEY_PASSWORD, null);
+        //Hacemos la conexion con el cueadro de dialogo
+        dialog_p_m.setContentView(R.layout.cuadro_dialogo_password_maestra);
+
+        //Inicializamos las vistas
+        Password_maestra = dialog_p_m.findViewById(R.id.Password_maestra);
+        Et_nueva_pass_maestra = dialog_p_m.findViewById(R.id.Et_nueva_pass_maestra);
+        Et_C_nueva_pass_maestra = dialog_p_m.findViewById(R.id.Et_C_nueva_pass_maestra);
+        Btn_cambiar_pass_maestra = dialog_p_m.findViewById(R.id.Btn_cambiar_pass_maestra);
+        Btn_cancelar_pass_maestra = dialog_p_m.findViewById(R.id.Btn_cancelar_pass_maestra);
+
+        Btn_cambiar_pass_maestra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Obtenemos los datos de los Editext
+                String S_nueva_password = Et_nueva_pass_maestra.getText().toString().trim();
+                String S_c_nueva_password = Et_C_nueva_pass_maestra.getText().toString().trim();
+
+                /* Validacion de datos */
+                if(S_nueva_password.equals("")){
+                    Toast.makeText(getActivity(), "Ingrese nueva contraseña", Toast.LENGTH_SHORT).show();
+                } else if (S_c_nueva_password.equals("")) {
+                    Toast.makeText(getActivity(), "Confirme nueva contraseña", Toast.LENGTH_SHORT).show();
+                }
+                else if(S_nueva_password.length()<6){
+                    Toast.makeText(getActivity(), "La contraseña debe tener mas de 6 caracteres", Toast.LENGTH_SHORT).show();
+                } else if (!S_nueva_password.equals(S_c_nueva_password)) {
+                    Toast.makeText(getActivity(), "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+
+                }else {
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    /*Pasar los nuevos datos a las llaves */
+                    editor.putString(KEY_PASSWORD, S_nueva_password);
+                    editor.putString(KEY_C_PASSWORD, S_c_nueva_password);
+                    editor.apply();
+                    //Salimos de la app para iniciar sesion con la nueva contraseña
+                    startActivity(new Intent(getActivity(), Login_u.class));
+                    getActivity().finish();
+                    Toast.makeText(getActivity(), "La contraseña maestra se ha cambiado", Toast.LENGTH_SHORT).show();
+                    dialog_p_m.dismiss();
+                }
+            }
+        });
+
+        Btn_cancelar_pass_maestra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Cancelado por el usuario", Toast.LENGTH_SHORT).show();
+                dialog_p_m.dismiss();
+            }
+        });
+
+        Password_maestra.setText(password_maestra_recuperada);
+        Password_maestra.setEnabled(false);
+        Password_maestra.setBackgroundColor(Color.TRANSPARENT);
+        Password_maestra.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        dialog_p_m.show();
+        dialog_p_m.setCancelable(false);
+    }
+
 
     //Permiso para exportar un registro
     private ActivityResultLauncher<String> SolicitudPermisoExportar =

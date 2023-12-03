@@ -25,6 +25,7 @@
         <EditText
             android:id="@+id/EtPasswordU"
             android:hint="@string/EtPasswordU"
+            android:inputType="textPassword"
             android:fontFamily="@font/opensans_regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -56,6 +57,7 @@
         android:fontFamily="@font/opensans_regular"
         android:text="@string/btnInicioSesionBiometrico"
         android:textColor="#fff"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#104487"/>
@@ -67,7 +69,7 @@
         app:lottie_imageAssetsFolder="assets"
         app:lottie_fileName="huella_dactilar.json"
         app:lottie_autoPlay="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         app:lottie_loop="true"
         />
 

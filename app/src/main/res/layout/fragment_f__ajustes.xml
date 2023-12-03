@@ -67,6 +67,21 @@
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"/>
+        <!-- Cambiar contrasena -->
+        <TextView
+            android:id="@+id/Cambiar_password_maestra"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_bold"
+            android:text="@string/Cambiar_password_maestra"
+            android:layout_marginStart="20dp"
+            android:textSize="18sp"
+            app:drawableStartCompat = "@drawable/icono_pass_maestra"
+            android:drawablePadding="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"/>
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>

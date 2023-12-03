@@ -61,7 +61,7 @@ public class Login_u extends AppCompatActivity {
             @Override
             public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
-                Toast.makeText(Login_u.this, "Autenticacicón biométrica exitosa, ¡Bienvenido(a)!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login_u.this, "Autenticación biométrica exitosa, ¡Bienvenido(a)!", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Login_u.this, MainActivity.class));
                 finish();
             }
@@ -75,7 +75,7 @@ public class Login_u extends AppCompatActivity {
         });
         /*Configurar comportamiento del aviso biometrico*/
         promptInfo = new BiometricPrompt.PromptInfo.Builder()
-                .setTitle("Autenticacicón biométrica")
+                .setTitle("Autenticación biométrica")
                 .setNegativeButtonText("Cancelar")
                 .build();
 
