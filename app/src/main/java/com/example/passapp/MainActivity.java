@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.animation.AlphaAnimation;
 import android.widget.Toast;
 
+import com.example.passapp.Fragmentos.F_AcercaDe;
 import com.example.passapp.Fragmentos.F_Ajustes;
 import com.example.passapp.Fragmentos.F_Todas;
 import com.google.android.material.navigation.NavigationView;
@@ -56,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         if(id == R.id.Opcion_Ajustes){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new F_Ajustes()).commit();
+        }
+        if(id == R.id.Opcion_AcercaDe){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new F_AcercaDe()).commit();
         }
         if(id== R.id.Opcion_Salir){
             Toast.makeText(this, "Cerraste sesión", Toast.LENGTH_SHORT).show();
