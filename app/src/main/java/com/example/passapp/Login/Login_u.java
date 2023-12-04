@@ -1,16 +1,20 @@
 package com.example.passapp.Login;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.biometric.BiometricPrompt;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.passapp.MainActivity;
@@ -20,6 +24,8 @@ public class Login_u extends AppCompatActivity {
     EditText EtPasswordU;
     Button btnIngresar, btnInicioSesionBiometrico;
     SharedPreferences sharedPreferences;
+
+    ImageButton Ib_Aviso;
     private static final String SHARED_PREF = "mi_pref";
     private static final String KEY_PASSWORD = "password";
     private BiometricPrompt biometricPrompt;
@@ -87,12 +93,29 @@ public class Login_u extends AppCompatActivity {
                 biometricPrompt.authenticate(promptInfo);
             }
         });
+
+        Ib_Aviso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(Login_u.this);
+                builder.setTitle("Importante");
+                builder.setMessage("Esta funcionalidad solo esta disponible con huellas dactilares previamente registradas en el dispositivo.");
+                builder.setPositiveButton("Entendido", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                builder.create().show();
+            }
+        });
     }
     private void InicializarVariables(){
         EtPasswordU = findViewById(R.id.EtPasswordU);
         btnIngresar = findViewById(R.id.btnIngresar);
         btnInicioSesionBiometrico = findViewById(R.id.btnInicioSesionBiometrico);
         sharedPreferences = getSharedPreferences(SHARED_PREF,MODE_PRIVATE);
+        Ib_Aviso = findViewById(R.id.Ib_Aviso);
     }
 
 }

@@ -11,7 +11,9 @@
     android:orientation="vertical">
     <TextView
         android:text="@string/TXTBienvenidos"
+        android:gravity="center"
         android:textSize="25sp"
+        android:textStyle="italic"
         android:fontFamily="@font/opensans_regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -50,17 +52,38 @@
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-
-    <!-- Boton inicio sesion biometrico -->
-    <Button
-        android:id="@+id/btnInicioSesionBiometrico"
-        android:fontFamily="@font/opensans_regular"
-        android:text="@string/btnInicioSesionBiometrico"
-        android:textColor="#fff"
-        android:layout_marginTop="10dp"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#104487"/>
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <!-- Boton inicio sesion biometrico -->
+        <Button
+            android:id="@+id/btnInicioSesionBiometrico"
+            android:fontFamily="@font/opensans_regular"
+            android:text="@string/btnInicioSesionBiometrico"
+            android:textColor="#fff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#104487"/>
+        <ImageButton
+            android:id="@+id/Ib_Aviso"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_aviso"
+            android:background="@android:color/transparent"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="120dp"

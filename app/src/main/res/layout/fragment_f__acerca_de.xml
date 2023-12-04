@@ -48,6 +48,51 @@
             android:fontFamily="@font/opensans_regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+        <!-- Redes sociales -->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <!--Twiter-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Ir_Twitter"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/twitter"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Ir_Facebook"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/facebook"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Ir_Instagram"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/instagram"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Ir_Youtube"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/youtube"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <Button
+            android:id="@+id/Ir_terminos"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/opensans_regular"
+            android:text="@string/Ir_terminos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>

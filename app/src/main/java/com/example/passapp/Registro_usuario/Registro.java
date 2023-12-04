@@ -59,8 +59,8 @@ public class Registro extends AppCompatActivity {
                     editor.putString(KEY_C_PASSWORD,S_C_password);
                     editor.apply();
 
-                    Toast.makeText(Registro.this, "KEY PASSWORD" + S_password, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(Registro.this, "KEY_C_PASSWORD" + S_C_password, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Registro.this, "KEY PASSWORD" + S_password, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Registro.this, "KEY_C_PASSWORD" + S_C_password, Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(Registro.this, MainActivity.class);
                     startActivity(intent);
